@@ -18,6 +18,17 @@ const signIn = function (data) {
   })
 }
 
+const changePassword = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/change-password',
+    method: 'PATCH',
+    data: data,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 const signOut = function () {
   return $.ajax({
     url: config.apiUrl + '/sign-out',
@@ -31,7 +42,6 @@ const signOut = function () {
 module.exports = {
   signUp,
   signIn,
+  changePassword,
   signOut
-  // newGame,
-  // playerOne
 }
