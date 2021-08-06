@@ -16,6 +16,8 @@ const onSignInSuccess = function (response) {
   $('#sign-out').show()
   $('#change-password-header').show()
   $('#change-password').show()
+  $('#create-beer-header').show()
+  $('#create-beer').show()
   $('#sign-in-header').hide()
   $('#sign-in').hide()
   $('#sign-up-header').hide()
@@ -47,10 +49,17 @@ const onFailure = function () {
   $('#sign-in').trigger('reset')
 }
 
+const onCreateBeerSuccess = function (response) {
+  store.user = response.user
+  $('#message').text(`${response.beer.Name} added!`)
+  $('#create-beer').trigger('reset')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignInSuccess,
   onSignOutSuccess,
   onChangePasswordSuccess,
+  onCreateBeerSuccess,
   onFailure
 }

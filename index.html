@@ -19,31 +19,45 @@
   <h2 id="sign-up-header">Sign Up!</h2>
   <form id="sign-up">
     <label for="sign-up-email">Email:</label>
-    <input name="credentials[email]" id="sign-up-email" type="email">
+    <input name="credentials[email]" id="sign-up-email" type="email" placeholder="Email">
     <label for="sign-up-password">Password:</label>
-    <input name="credentials[password]" id="sign-up-password" type="password">
+    <input name="credentials[password]" id="sign-up-password" type="password" placeholder="Password">
     <label for="sign-up-password-confirmation">Password Confirmation:</label>
-    <input name="credentials[password_confirmation]" id="sign-up-password-confirmation" type="password">
+    <input name="credentials[password_confirmation]" id="sign-up-password-confirmation" type="password" placeholder="Password">
     <input type="submit" value="Sign Up">
   </form>
   <h2 id="sign-in-header">Sign In!</h2>
   <form id="sign-in">
     <label for="sign-in-email">Email:</label>
-    <input name="credentials[email]" id="sign-in-email" type="email">
+    <input name="credentials[email]" id="sign-in-email" type="email" placeholder="Email">
     <label for="sign-in-password">Password:</label>
-    <input name="credentials[password]" id="sign-in-password" type="password">
-    <input type="submit" value="Sign In">
+    <input name="credentials[password]" id="sign-in-password" type="password" placeholder="Password">
+    <input type="submit" value="Sign In" >
   </form>
   <h2 id="change-password-header">Change Password!</h2>
   <form id="change-password">
     <label for="old-password">Old Password:</label>
-    <input name="passwords[old]" id="old-password" type="password">
+    <input name="passwords[old]" id="old-password" type="password" placeholder="Old Password">
     <label for="new-password">New Password:</label>
-    <input name="passwords[new]" id="new-password" type="password">
+    <input name="passwords[new]" id="new-password" type="password" placeholder="New Password">
     <input type="submit" value="Change Password">
   </form>
   <h2 id="sign-out-header">Sign Out!</h2>
   <button id="sign-out" type="button">Sign out</button>
+  <h2 id="create-beer-header">Add a Beer!</h2>
+  <form id="create-beer">
+    <label for="create-beer-name">Name:</label>
+    <input name="beer[Name]" id="create-beer-name" type="text" placeholder="Name">
+    <label for="create-beer-brewery">Brewery:</label>
+    <input name="beer[Brewery]" id="create-beer-brewery" type="text" placeholder="Brewery">
+    <label for="create-beer-type">Type:</label>
+    <input name="beer[Type]" id="create-beer-type" type="text" placeholder="Type">
+    <label for="create-beer-rating">Rating:</label>
+    <input name="beer[Rating]" id="create-beer-rating" type="number" placeholder="?/5">
+    <label for="create-beer-description">Description:</label>
+    <input name="beer[Description]" id="create-beer-description" type="text" placeholder="Description">
+    <input type="submit" value="Create">
+  </form>
 </body>
 
 </html>

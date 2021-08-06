@@ -15,4 +15,9 @@ $(() => {
   $('#sign-out-header').hide()
   $('#change-password').hide()
   $('#change-password-header').hide()
+  //
+  //
+  $('#create-beer-header').hide()
+  $('#create-beer').hide()
+  $('#create-beer').on('submit', authEvents.onCreateBeer)
 })

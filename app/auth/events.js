@@ -35,11 +35,20 @@ const onSignOut = function () {
     .catch(ui.onFailure)
 }
 
+const onCreateBeer = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.createBeer(data)
+    .then(ui.onCreateBeerSuccess)
+    .catch(ui.onFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onChangePassword
-  // onNewGame,
-  // onPlayerOne
+  onChangePassword,
+  onCreateBeer
+
 }

@@ -39,9 +39,21 @@ const signOut = function () {
   })
 }
 
+const createBeer = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/beers',
+    method: 'POST',
+    data: data,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  createBeer
 }
