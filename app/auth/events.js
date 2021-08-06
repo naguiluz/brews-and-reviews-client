@@ -16,7 +16,9 @@ const onSignIn = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  api.signIn(data).then(ui.onSignInSuccess).catch(ui.onFailure)
+  api.signIn(data)
+    .then(ui.onSignInSuccess)
+    .catch(ui.onFailure)
 }
 
 const onChangePassword = function (event) {
@@ -35,20 +37,41 @@ const onSignOut = function () {
     .catch(ui.onFailure)
 }
 
+const onBeerIndex = function () {
+  api.beerIndex()
+    .then(ui.onBeerIndexSuccess)
+    .catch(ui.onFailure)
+}
+
 const onCreateBeer = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
   api.createBeer(data)
+    .then(api.beerIndex) // this runs index before the create success
+    .then(ui.onBeerIndexSuccess)
     .then(ui.onCreateBeerSuccess)
     .catch(ui.onFailure)
 }
 
+const onUpdateBeer = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  const beerID = data.beers._id
+  api.updateBeer(beerID, data)
+    .then(api.beerIndex)
+    .then(ui.onBeerIndexSuccess)
+    .then(ui.onUpdateBeerSuccess)
+    .catch(ui.onUpdateBeerFailure)
+}
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
   onChangePassword,
-  onCreateBeer
+  onCreateBeer,
+  onBeerIndex,
+  onUpdateBeer
 
 }

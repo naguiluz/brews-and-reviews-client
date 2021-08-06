@@ -50,10 +50,34 @@ const createBeer = function (data) {
   })
 }
 
+const beerIndex = function () {
+  return $.ajax({
+    url: config.apiUrl + '/beers',
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+const updateBeer = function (id, data) {
+  // needs to get beers id somehow
+  // need to change object to { beers: { beer: } }?
+  return $.ajax({
+    url: config.apiUrl + '/beers/' + id,
+    method: 'PATCH',
+    data: data,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
-  createBeer
+  createBeer,
+  beerIndex,
+  updateBeer
 }

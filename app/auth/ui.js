@@ -18,6 +18,10 @@ const onSignInSuccess = function (response) {
   $('#change-password').show()
   $('#create-beer-header').show()
   $('#create-beer').show()
+  $('#beer-index-header').show()
+  $('#beer-index').show()
+  $('#update-beer-header').show()
+  $('#update-beer').show()
   $('#sign-in-header').hide()
   $('#sign-in').hide()
   $('#sign-up-header').hide()
@@ -49,10 +53,39 @@ const onFailure = function () {
   $('#sign-in').trigger('reset')
 }
 
-const onCreateBeerSuccess = function (response) {
-  store.user = response.user
-  $('#message').text(`${response.beer.Name} added!`)
+const onUpdateBeerFailure = function () {
+  // this gives our user a fail message
+  $('#message').text('You can only update beers you own.')
+  $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
+}
+
+const onCreateBeerSuccess = function () {
+  $('#message').text('Beer added successfully!')
   $('#create-beer').trigger('reset')
+}
+
+const onBeerIndexSuccess = function (response) {
+  $('#message').text('Mmmmmmmm...beers....')
+  // taken from jquery-ajax-crud in trainings
+  const beers = response.beers
+  let beerListHtml = ''
+  console.log(beers)
+  beers.forEach((beer) => {
+    beerListHtml += `
+    <li>${beer.Name}</li>
+    <li>${beer.Brewery}</li>
+    <li>${beer.Type}</li>
+    <li>${beer.Rating}</li>
+    <li>${beer.Description}</li>
+    <p>${beer._id}</p>`
+  })
+  $('#beer-list').html(`Check 'em out: ${beerListHtml}`)
+}
+
+const onUpdateBeerSuccess = function () {
+  $('#message').text('Beer updated successfully!')
+  $('#update-beer').trigger('reset')
 }
 
 module.exports = {
@@ -61,5 +94,8 @@ module.exports = {
   onSignOutSuccess,
   onChangePasswordSuccess,
   onCreateBeerSuccess,
-  onFailure
+  onBeerIndexSuccess,
+  onUpdateBeerSuccess,
+  onFailure,
+  onUpdateBeerFailure
 }
