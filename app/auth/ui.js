@@ -17,7 +17,6 @@ const onSignInSuccess = function (response) {
   $('#beer-index-button').show()
   $('#create-beer-button').show()
   $('#update-beer-button').show()
-  $('#delete-beer-header').show()
   $('#delete-beer-button').show()
   $('#sign-in-div').hide()
   $('#sign-in-button').hide()
@@ -70,8 +69,15 @@ const onBeerIndexSuccess = function (response) {
   $('#message').text('Mmmmmmmm...beers....')
   // taken from jquery-ajax-crud in trainings
   const beers = response.beers
+  console.log(beers)
+  store.userBeers = [] // empty array to store user specific beers
+  beers.forEach((beer) => { // checking each beer from proper id
+    if (beer.owner === store.user._id) {
+      store.userBeers.push(beer) // adding it to array
+    }
+  })
   let beerListHtml = ''
-  beers.forEach((beer) => {
+  store.userBeers.forEach((beer) => {
     beerListHtml += `
     <li>Name: ${beer.Name}</li>
     <li>Brewery: ${beer.Brewery}</li>
