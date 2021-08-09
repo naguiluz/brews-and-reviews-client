@@ -72,6 +72,17 @@ const updateBeer = function (id, data) {
     }
   })
 }
+
+const deleteBeer = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/beers/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -79,5 +90,6 @@ module.exports = {
   signOut,
   createBeer,
   beerIndex,
-  updateBeer
+  updateBeer,
+  deleteBeer
 }

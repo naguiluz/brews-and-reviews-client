@@ -16,6 +16,7 @@
 <body>
   <h1>Brews and Reviews</h1>
   <p id="message"></p>
+  
   <h2 id="sign-up-header">Sign Up!</h2>
   <form id="sign-up">
     <label for="sign-up-email">Email:</label>
@@ -75,6 +76,12 @@
     <label for="update-beer-description">Description:</label>
     <input name="beer[Description]" id="update-beer-description" type="text" placeholder="Description">
     <input type="submit" value="Update">
+  </form>
+  <h2 id="delete-beer-header">Delete Beer</h2>
+  <form id="delete-beer">
+    <label for="beer-id">ID:</label>
+    <input name="beers[_id]" id="delete-beer-id" type="text" placeholder="ID #">
+    <input type="submit" value="Delete">
   </form>
 
   <p id="beer-list"></p>

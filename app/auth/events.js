@@ -65,6 +65,19 @@ const onUpdateBeer = function (event) {
     .then(ui.onUpdateBeerSuccess)
     .catch(ui.onUpdateBeerFailure)
 }
+
+const onDeleteBeer = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  const beerID = data.beers._id
+  api.deleteBeer(beerID)
+    .then(api.beerIndex)
+    .then(ui.onBeerIndexSuccess)
+    .then(ui.onDeleteBeerSuccess)
+    .catch(ui.onFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -72,6 +85,7 @@ module.exports = {
   onChangePassword,
   onCreateBeer,
   onBeerIndex,
-  onUpdateBeer
+  onUpdateBeer,
+  onDeleteBeer
 
 }

@@ -22,6 +22,8 @@ const onSignInSuccess = function (response) {
   $('#beer-index').show()
   $('#update-beer-header').show()
   $('#update-beer').show()
+  $('#delete-beer-header').show()
+  $('#delete-beer').show()
   $('#sign-in-header').hide()
   $('#sign-in').hide()
   $('#sign-up-header').hide()
@@ -88,6 +90,10 @@ const onUpdateBeerSuccess = function () {
   $('#update-beer').trigger('reset')
 }
 
+const onDeleteBeerSuccess = function () {
+  $('#message').text('Beer deleted successfully!')
+  $('#delete-beer').trigger('reset')
+}
 module.exports = {
   onSignUpSuccess,
   onSignInSuccess,
@@ -97,5 +103,6 @@ module.exports = {
   onBeerIndexSuccess,
   onUpdateBeerSuccess,
   onFailure,
-  onUpdateBeerFailure
+  onUpdateBeerFailure,
+  onDeleteBeerSuccess
 }
