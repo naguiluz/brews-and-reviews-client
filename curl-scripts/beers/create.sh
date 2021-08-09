@@ -14,7 +14,8 @@ curl "${API}${URL_PATH}" \
       "Brewery": "'"${BREWERY}"'",
       "Type": "'"${TYPE}"'",
       "Rating": "'"${RATING}"'",
-      "Description": "'"${DESCRIPTION}"'"
+      "Description": "'"${DESCRIPTION}"'",
+      "Image": "'"${LINK}"'"
 
     }
   }'
