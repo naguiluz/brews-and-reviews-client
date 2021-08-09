@@ -1,20 +1,33 @@
 
-const showAndHide = (showMe) => {
-  $('#sign-out').hide()
-  $('#sign-out-header').hide()
-  $('#change-password').hide()
-  $('#change-password-header').hide()
-  $('#create-beer-header').hide()
-  $('#create-beer').hide()
-  $('#beer-index-header').hide()
-  $('#beer-index').hide()
-  $('#update-beer-header').hide()
-  $('#update-beer').hide()
-  $('#delete-beer-header').hide()
-  $('#delete-beer').hide()
-  showMe.showAndHide()
+const signUp = function () {
+  $('#sign-up-div').show()
+}
+
+const signIn = function () {
+  $('#sign-in-div').show()
+}
+
+const changePassword = function () {
+  $('#change-password-div').show()
+}
+
+const createBeer = function () {
+  $('#create-beer-div').show()
+}
+
+const updateBeer = function () {
+  $('#update-beer-div').show()
+}
+
+const deleteBeer = function () {
+  $('#delete-beer-div').show()
 }
 
 module.exports = {
-  showAndHide
+  signUp,
+  signIn,
+  changePassword,
+  createBeer,
+  updateBeer,
+  deleteBeer
 }

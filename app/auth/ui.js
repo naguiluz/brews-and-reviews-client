@@ -3,8 +3,8 @@ const store = require('./../store')
 const onSignUpSuccess = function (response) {
   // this gives our user a success message
   $('#message').text(`Thanks for signing up, ${response.user.email}!`)
-  $('#sign-up-header').hide()
-  $('#sign-up').hide()
+  // $('#sign-up-header').hide()
+  // $('#sign-up').hide()
 }
 
 const onSignInSuccess = function (response) {
@@ -12,22 +12,17 @@ const onSignInSuccess = function (response) {
   $('#message').text(`Welcome back, ${response.user.email}!`)
   $('#sign-up').trigger('reset')
   $('#sign-in').trigger('reset')
-  $('#sign-out-header').show()
-  $('#sign-out').show()
-  $('#change-password-header').show()
-  $('#change-password').show()
-  $('#create-beer-header').show()
-  $('#create-beer').show()
-  $('#beer-index-header').show()
-  $('#beer-index').show()
-  $('#update-beer-header').show()
-  $('#update-beer').show()
+  $('#change-password-button').show()
+  $('#sign-out-button').show()
+  $('#beer-index-button').show()
+  $('#create-beer-button').show()
+  $('#update-beer-button').show()
   $('#delete-beer-header').show()
-  $('#delete-beer').show()
-  $('#sign-in-header').hide()
-  $('#sign-in').hide()
-  $('#sign-up-header').hide()
-  $('#sign-up').hide()
+  $('#delete-beer-button').show()
+  $('#sign-in-div').hide()
+  $('#sign-in-button').hide()
+  $('#sign-up-div').hide()
+  $('#sign-up-button').hide()
 }
 
 const onChangePasswordSuccess = function () {
@@ -36,16 +31,20 @@ const onChangePasswordSuccess = function () {
 }
 const onSignOutSuccess = function () {
   $('#message').text('Come back soon!')
-  $('#sign-up').trigger('reset')
-  $('#sign-in').trigger('reset')
-  $('#sign-out-header').hide()
-  $('#sign-out').hide()
-  $('#change-password').hide()
-  $('#change-password-header').hide()
-  $('#sign-in-header').show()
-  $('#sign-in').show()
-  $('#sign-up-header').show()
-  $('#sign-up').show()
+  $('#beer-index-button').hide()
+  $('#create-beer-div').hide()
+  $('#create-beer-button').hide()
+  $('#sign-out-div').hide()
+  $('#sign-out-button').hide()
+  $('#change-password-div').hide()
+  $('#change-password-button').hide()
+  $('#update-beer-div').hide()
+  $('#update-beer-button').hide()
+  $('#delete-beer-div').hide()
+  $('#delete-beer-button').hide()
+  $('#beer-list').hide()
+  $('#sign-in-button').show()
+  $('#sign-up-button').show()
 }
 
 const onFailure = function () {
@@ -72,16 +71,17 @@ const onBeerIndexSuccess = function (response) {
   // taken from jquery-ajax-crud in trainings
   const beers = response.beers
   let beerListHtml = ''
-  console.log(beers)
   beers.forEach((beer) => {
     beerListHtml += `
-    <li>${beer.Name}</li>
-    <li>${beer.Brewery}</li>
-    <li>${beer.Type}</li>
-    <li>${beer.Rating}</li>
-    <li>${beer.Description}</li>
-    <p>${beer._id}</p>`
+    <li>Name: ${beer.Name}</li>
+    <li>Brewery: ${beer.Brewery}</li>
+    <li>Type: ${beer.Type}</li>
+    <li>Rating: ${beer.Rating}</li>
+    <li>Description: ${beer.Description}</li>
+    <li>User: ${beer.owner}</li>
+    <li>ID #: ${beer._id}<li>`
   })
+  $('#beer-list').show()
   $('#beer-list').html(`Check 'em out: ${beerListHtml}`)
 }
 
