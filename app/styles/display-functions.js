@@ -1,26 +1,26 @@
 
 const signUp = function () {
-  $('#sign-up-div').show()
+  $('#sign-up-div').toggle()
 }
 
 const signIn = function () {
-  $('#sign-in-div').show()
+  $('#sign-in-div').toggle()
 }
 
 const changePassword = function () {
-  $('#change-password-div').show()
+  $('#change-password-div').toggle()
 }
 
 const createBeer = function () {
-  $('#create-beer-div').show()
+  $('#create-beer-div').toggle()
 }
 
 const updateBeer = function () {
-  $('#update-beer-div').show()
+  $('#update-beer-div').toggle()
 }
 
 const deleteBeer = function () {
-  $('#delete-beer-div').show()
+  $('#delete-beer-div').toggle()
 }
 
 module.exports = {

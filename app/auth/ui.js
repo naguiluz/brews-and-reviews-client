@@ -88,7 +88,7 @@ const onBeerIndexSuccess = function (response) {
     <li>User: ${beer.owner}</li>
     <li>ID #: ${beer._id}<li>`
   })
-  $('#beer-list').show()
+  $('#beer-list').toggle()
   $('#beer-list').html(`Check 'em out: ${beerListHtml}`)
 }
 
