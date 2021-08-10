@@ -88,7 +88,9 @@ const onBeerIndexSuccess = function (response) {
     <li>Image: <a href=${beer.Image}>Let's have a look!</a></li>
     <li>ID #: ${beer._id}<li><br/>`
   })
-  $('#beer-list').html(`Check 'em out: ${beerListHtml}`)
+  $('#beer-list').html(
+    `<h1>Check 'em out:</h1> ${beerListHtml}`
+  )
 }
 
 const onUpdateBeerSuccess = function () {
