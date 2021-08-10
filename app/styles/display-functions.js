@@ -11,6 +11,9 @@ const changePassword = function () {
   $('#change-password-div').toggle()
 }
 
+const indexBeer = function () {
+  $('#beer-list').toggle()
+}
 const createBeer = function () {
   $('#create-beer-div').toggle()
 }
@@ -29,5 +32,6 @@ module.exports = {
   changePassword,
   createBeer,
   updateBeer,
-  deleteBeer
+  deleteBeer,
+  indexBeer
 }

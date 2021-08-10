@@ -1,1 +1,28 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+
+body {
+  background: #045757;
+  color: #e4e4e4;
+  align-items: center;
+  display: block;
+  margin: auto;
+
+}
+h1 {
+  background-color: #222222;
+  background-image: url("https://im3.ezgif.com/tmp/ezgif-3-78ba8420aa1b.gif");
+  background-size: 100%;
+  border-radius: 15%;
+  color: #222222;
+  font-family: 'Monoton', cursive;
+  margin: 1em;
+  text-align: center;
+}
+
+.load-button {
+  align-items: center;
+  display: block;
+  margin: auto;
+}

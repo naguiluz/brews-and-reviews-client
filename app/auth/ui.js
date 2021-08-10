@@ -66,6 +66,7 @@ const onCreateBeerSuccess = function () {
 }
 
 const onBeerIndexSuccess = function (response) {
+  // $('#beer-list').toggle()
   $('#message').text('Mmmmmmmm...beers....')
   // taken from jquery-ajax-crud in trainings
   const beers = response.beers
@@ -88,7 +89,6 @@ const onBeerIndexSuccess = function (response) {
     <li>User: ${beer.owner}</li>
     <li>ID #: ${beer._id}<li>`
   })
-  $('#beer-list').toggle()
   $('#beer-list').html(`Check 'em out: ${beerListHtml}`)
 }
 

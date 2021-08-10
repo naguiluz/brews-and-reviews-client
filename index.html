@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>Brews and Reviews</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags-->
@@ -14,9 +14,9 @@
 </head>
 
 <body>
-  <h1>Brews and Reviews</h1>
+  <h1>Brews</br>&</br>Reviews</h1>
   <p id="message"></p>
-  <button id="sign-up-button" type="button">Sign Up</button>
+  <button id="sign-up-button" type="button" class="load-button">Sign Up</button>
   <div id="sign-up-div">
     <h2 id="sign-up-header">Sign Up!</h2>
     <form id="sign-up">
@@ -26,11 +26,11 @@
       <input name="credentials[password]" id="sign-up-password" type="password" placeholder="Password">
       <label for="sign-up-password-confirmation">Password Confirmation:</label>
       <input name="credentials[password_confirmation]" id="sign-up-password-confirmation" type="password" placeholder="Password">
-      <input type="submit" value="Sign Up">
+      <input type="submit" value="Sign Up" class="button">
     </form>
   </div>
 
-  <button id="sign-in-button" type="button">Sign In</button>
+  <button id="sign-in-button" type="button" class="load-button">Sign In</button>
   <div id="sign-in-div">
     <h2 id="sign-in-header">Sign In!</h2>
     <form id="sign-in">
@@ -38,11 +38,11 @@
       <input name="credentials[email]" id="sign-in-email" type="email" placeholder="Email" value="0@0.0"><!--get rid of value-->
       <label for="sign-in-password">Password:</label>
       <input name="credentials[password]" id="sign-in-password" type="password" placeholder="Password" value="`"><!--get rid of value-->
-      <input type="submit" value="Sign In" >
+      <input type="submit" value="Sign In" class="button">
     </form>
   </div>
 
-  <button id="change-password-button" type="button">Change Password</button>
+  <button id="change-password-button" type="button" class="signed-in-button">Change Password</button>
   <div id="change-password-div">
     <h2 id="change-password-header">Change Password!</h2>
     <form id="change-password">
@@ -50,18 +50,18 @@
       <input name="passwords[old]" id="old-password" type="password" placeholder="Old Password">
       <label for="new-password">New Password:</label>
       <input name="passwords[new]" id="new-password" type="password" placeholder="New Password">
-      <input type="submit" value="Change Password">
+      <input type="submit" value="Change Password" class="button">
     </form>
   </div>
 
-  <button id="sign-out-button" type="button">Sign out</button>
+  <button id="sign-out-button" type="button" class="signed-in-button">Sign out</button>
 
-  <button id="beer-index-button" type="button">SHOW ME BEER</button>
+  <button id="beer-index-button" type="button" class="signed-in-button">SHOW ME BEER</button>
   <p id="beer-list"></p>
 
 
 
-  <button id="create-beer-button" type="button">Add a new brew!</button>
+  <button id="create-beer-button" type="button" class="signed-in-button">Add a new brew!</button>
   <div id="create-beer-div">
     <form id="create-beer">
       <label for="create-beer-name">Name:</label>
@@ -76,11 +76,11 @@
       <input name="beer[Description]" id="create-beer-description" type="text" placeholder="Description">
       <label for="create-beer-image">Image:</label>
       <input name="beer[Image]" id="create-beer-image" type="text" placeholder="Link">
-      <input type="submit" value="Create">
+      <input type="submit" value="Create" class="button">
     </form>
   </div>
 
-  <button id="update-beer-button" type="button">Update an existing brew!</button>
+  <button id="update-beer-button" type="button" class="signed-in-button">Update an existing brew!</button>
   <div id="update-beer-div">
     <form id="update-beer">
       <label for="beer-id">ID:</label>
@@ -97,11 +97,11 @@
       <input name="beer[Description]" id="update-beer-description" type="text" placeholder="Description">
       <label for="update-beer-image">Image:</label>
       <input name="beer[Image]" id="update-beer-image" type="text" placeholder="Link">
-      <input type="submit" value="Update">
+      <input type="submit" value="Update" class="button">
     </form>
   </div>
 
-  <button id="delete-beer-button" type="button">Delete a brew!</button>
+  <button id="delete-beer-button" type="button" class="signed-in-button">Delete a brew!</button>
   <div id="delete-beer-div">
     <form id="delete-beer">
       <label for="beer-id">ID:</label>

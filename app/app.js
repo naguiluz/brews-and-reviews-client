@@ -7,6 +7,7 @@
 const authEvents = require('./auth/events')
 const displayFunctions = require('./styles/display-functions')
 $(() => {
+  $('#beer-index-button').on('click', displayFunctions.indexBeer)
   // functions
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
@@ -23,6 +24,7 @@ $(() => {
   $('#create-beer-button').on('click', displayFunctions.createBeer)
   $('#update-beer-button').on('click', displayFunctions.updateBeer)
   $('#delete-beer-button').on('click', displayFunctions.deleteBeer)
+
   // hide
   $('#sign-up-div').hide()
   $('#sign-in-div').hide()
