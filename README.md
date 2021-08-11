@@ -1,4 +1,4 @@
-[Link to deployed application](naguiluz.github.io/brews-and-reviews-client/)</br>
+[Link to deployed application](https://naguiluz.github.io/brews-and-reviews-client/)</br>
 [Link to deployed api](https://dry-brushlands-62315.herokuapp.com)
 
 I'm going to build a site where users can catalog beers they've tried from different micro/local breweries and post pictures, descriptions, and reviews. 
