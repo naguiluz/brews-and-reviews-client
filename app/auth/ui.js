@@ -3,6 +3,7 @@ const store = require('./../store')
 const onSignUpSuccess = function (response) {
   // this gives our user a success message
   $('#message').text(`Thanks for signing up, ${response.user.email}!`)
+  $('#sign-up').trigger('reset')
   // $('#sign-up-header').hide()
   // $('#sign-up').hide()
 }
@@ -44,6 +45,11 @@ const onSignOutSuccess = function () {
   $('#beer-list').hide()
   $('#sign-in-button').show()
   $('#sign-up-button').show()
+  $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
+  $('#create-beer').trigger('reset')
+  $('#update-beer').trigger('reset')
+  $('#delete-beer').trigger('reset')
 }
 
 const onFailure = function () {
@@ -51,13 +57,14 @@ const onFailure = function () {
   $('#message').text('Whoops! There was an error!')
   $('#sign-up').trigger('reset')
   $('#sign-in').trigger('reset')
+  $('#create-beer').trigger('reset')
+  $('#delete-beer').trigger('reset')
 }
 
 const onUpdateBeerFailure = function () {
   // this gives our user a fail message
   $('#message').text('You can only update beers you own.')
-  $('#sign-up').trigger('reset')
-  $('#sign-in').trigger('reset')
+  $('#update-beer').trigger('reset')
 }
 
 const onCreateBeerSuccess = function () {
@@ -70,7 +77,6 @@ const onBeerIndexSuccess = function (response) {
   $('#message').text('Mmmmmmmm...beers....')
   // taken from jquery-ajax-crud in trainings
   const beers = response.beers
-  console.log(beers)
   store.userBeers = [] // empty array to store user specific beers
   beers.forEach((beer) => { // checking each beer from proper id
     if (beer.owner === store.user._id) {
