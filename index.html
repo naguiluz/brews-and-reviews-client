@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Brews and Reviews</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1>Brews<br/>&<br/>Reviews</h1>
+  <p id="message"></p>
+  <button id="sign-up-button" type="button" class="button">Sign Up</button>
+  <div id="sign-up-div">
+    <h2 id="sign-up-header">Enter new user info here:</h2>
+    <form id="sign-up">
+      <input name="credentials[email]" id="sign-up-email" type="email" placeholder="Email"><br />
+      <input name="credentials[password]" id="sign-up-password" type="password" placeholder="Password"><br />
+      <input name="credentials[password_confirmation]" id="sign-up-password-confirmation" type="password" placeholder="Password"><br />
+      <p id="warning">Please do not use any real emails/passwords that you do not want to share. While our passwords are encrypted, for now our servers are not heavily protected!</p>
+      <input type="submit" value="Submit" class="button">
+    </form>
+    <hr class="striped-border">
+  </div>
+
+  <button id="sign-in-button" type="button" class="button">Sign In</button>
+  <div id="sign-in-div">
+    <h2 id="sign-in-header">Let's see what you've been drinking!:</h2>
+    <form id="sign-in">
+      <input name="credentials[email]" id="sign-in-email" type="email" placeholder="Email"><br /><!--get rid of value-->
+      <input name="credentials[password]" id="sign-in-password" type="password" placeholder="Password"><br /><!--get rid of value-->
+      <input type="submit" value="Submit" class="button">
+    </form>
+  </div>
+
+  <button id="change-password-button" type="button" class="button">Change Password</button>
+  <div id="change-password-div">
+    <form id="change-password">
+      <input name="passwords[old]" id="old-password" type="password" placeholder="Old Password"><br />
+      <input name="passwords[new]" id="new-password" type="password" placeholder="New Password"><br />
+      <input type="submit" value="Submit" class="button">
+    </form>
+    <hr class="striped-border">
+  </div>
+
+  <button id="sign-out-button" type="button" class="button">Sign out</button>
+
+  <button id="beer-index-button" type="button" class="button">SHOW ME BEER</button>
+  <p id="beer-list"></p>
+  <hr class="striped-border">
+
+
+  <button id="create-beer-button" type="button" class="button">Add a new brew!</button>
+  <div id="create-beer-div">
+    <form id="create-beer">
+      <input name="beer[Name]" id="create-beer-name" type="text" placeholder="Name"><br />
+      <input name="beer[Brewery]" id="create-beer-brewery" type="text" placeholder="Brewery"><br />
+      <input name="beer[Type]" id="create-beer-type" type="text" placeholder="Type"><br />
+      <input name="beer[Rating]" id="create-beer-rating" type="number" min="0" max="5" placeholder="?/5"><br />
+      <input name="beer[Description]" id="create-beer-description" type="text" placeholder="Description"><br />
+      <input name="beer[Image]" id="create-beer-image" type="text" placeholder="Image Link"><br/>
+      <input type="submit" value="Create" class="button">
+    </form>
+    <hr class="striped-border">
+  </div>
+
+  <button id="update-beer-button" type="button" class="button">Update an existing brew!</button>
+  <div id="update-beer-div">
+    <form id="update-beer">
+      <input name="beers[_id]" id="beer-id" type="text" placeholder="ID #"><br />
+      <input name="beer[Name]" id="update-beer-name" type="text" placeholder="Name"><br />
+      <input name="beer[Brewery]" id="update-beer-brewery" type="text" placeholder="Brewery"><br />
+      <input name="beer[Type]" id="update-beer-type" type="text" placeholder="Type"><br />
+      <input name="beer[Rating]" id="update-beer-rating" type="number" min="0" max="5"  placeholder="?/5"><br />
+      <input name="beer[Description]" id="update-beer-description" type="text" placeholder="Description"><br />
+      <input name="beer[Image]" id="update-beer-image" type="text" placeholder="Image Link"><br />
+      <input type="submit" value="Update" class="button">
+    </form>
+    <hr class="striped-border">
+  </div>
+
+  <button id="delete-beer-button" type="button" class="button">Delete a brew!</button>
+  <div id="delete-beer-div">
+    <form id="delete-beer">
+      <input name="beers[_id]" id="delete-beer-id" type="text" placeholder="ID #"><br />
+      <input type="submit" value="Delete" class="button">
+    </form>
+  </div>
+
+</body>
+
+
+</html>
